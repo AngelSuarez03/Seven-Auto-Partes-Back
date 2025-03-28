@@ -23,7 +23,6 @@ class UsuarioService {
             try {
                 conn = yield (0, connection_1.connect)();
                 const result = yield conn.query("SELECT * FROM User WHERE correo = ? AND password = ?", [correo, password]);
-                console.log(result);
                 const usuario = result[0][0];
                 if (usuario !== undefined) {
                     response_content_1.default.status = http_status_codes_1.StatusCodes.OK;

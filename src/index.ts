@@ -1,5 +1,6 @@
 import express from "express"
 import usuarioRouter from "./routes/usuario.router"
+import productoRouter from "./routes/producto.router"
 import cors from "cors"
 import dotenv from "dotenv"
 
@@ -13,6 +14,7 @@ app.use(cors({
 const PORT = process.env.PORT || 3001
 
 app.use('/api/usuario', usuarioRouter)
+app.use('/api/producto', productoRouter)
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
